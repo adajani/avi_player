@@ -1,13 +1,12 @@
 /**
  * @file main.cpp
  * @brief Main entry point for the AVI Player application
- * @author Your Name
+ * @author Ahmed Dajani <adajani@iastate.edu>
  * @date 2025
  * @version 1.0
  * 
  * This is the main entry point for the AVI Player. It handles command line
  * arguments, creates an AVIPlayer instance, and manages the playback lifecycle.
- * convert video: ffmpeg -i drop.avi -c:v rawvideo -pix_fmt rgb24 drop_uncompressed.avi
  */
 
 #include "avi_player.h"

@@ -1,7 +1,7 @@
 /**
  * @file avi_player.cpp
  * @brief Implementation of the AVI Player class
- * @author Your Name
+ * @author Ahmed Dajani <adajani@iastate.edu>
  * @date 2025
  * @version 1.0
  */

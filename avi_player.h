@@ -1,7 +1,7 @@
 /**
  * @file avi_player.h
  * @brief Simple AVI Player for Uncompressed Video Files
- * @author Your Name
+ * @author Ahmed Dajani <adajani@iastate.edu>
  * @date 2025
  * @version 1.0
  * 

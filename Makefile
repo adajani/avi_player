@@ -1,6 +1,6 @@
 # Makefile for AVI Player
 # Simple AVI Player for Uncompressed Video Files
-# Author: Your Name
+# Author: Ahmed Dajani <adajani@iastate.edu>
 # Date: 2025
 
 # Compiler and flags
@@ -13,6 +13,7 @@ LIBS = -lSDL2
 # Directories
 SRC_DIR = .
 BUILD_DIR = build
+BIN_DIR = bin
 DOC_DIR = docs
 
 # Source files
@@ -21,17 +22,20 @@ HEADERS = avi_player.h
 OBJECTS = $(SOURCES:%.cpp=$(BUILD_DIR)/%.o)
 
 # Target executable
-TARGET = avi_player
+TARGET = $(BIN_DIR)/avi_player
 
 # Default target
 all: $(TARGET)
 
-# Create build directory if it doesn't exist
+# Create directories if they don't exist
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
 # Build the main executable
-$(TARGET): $(BUILD_DIR) $(OBJECTS)
+$(TARGET): $(BUILD_DIR) $(BIN_DIR) $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $(TARGET) $(LIBS)
 	@echo "Build complete: $(TARGET)"
 
@@ -46,7 +50,7 @@ debug: $(TARGET)
 # Clean build artifacts
 clean:
 	rm -rf $(BUILD_DIR)
-	rm -f $(TARGET)
+	rm -rf $(BIN_DIR)
 	@echo "Clean complete"
 
 # Clean everything including documentation
@@ -69,10 +73,10 @@ docs:
 
 # Install target (optional)
 install: $(TARGET)
-	@echo "Installing $(TARGET) to /usr/local/bin"
+	@echo "Installing avi_player to /usr/local/bin"
 	@if [ "$(shell id -u)" -eq 0 ]; then \
-		cp $(TARGET) /usr/local/bin/; \
-		chmod 755 /usr/local/bin/$(TARGET); \
+		cp $(TARGET) /usr/local/bin/avi_player; \
+		chmod 755 /usr/local/bin/avi_player; \
 		echo "Installation complete"; \
 	else \
 		echo "Run 'sudo make install' to install to system directory"; \
@@ -81,9 +85,9 @@ install: $(TARGET)
 
 # Uninstall target
 uninstall:
-	@echo "Removing $(TARGET) from /usr/local/bin"
+	@echo "Removing avi_player from /usr/local/bin"
 	@if [ "$(shell id -u)" -eq 0 ]; then \
-		rm -f /usr/local/bin/$(TARGET); \
+		rm -f /usr/local/bin/avi_player; \
 		echo "Uninstall complete"; \
 	else \
 		echo "Run 'sudo make uninstall' to remove from system directory"; \
@@ -93,9 +97,9 @@ uninstall:
 # Run the program with a test file (if available)
 test: $(TARGET)
 	@if [ -f test.avi ]; then \
-		./$(TARGET) test.avi; \
+		$(TARGET) test.avi; \
 	else \
-		echo "No test.avi file found. Usage: ./$(TARGET) <your_video.avi>"; \
+		echo "No test.avi file found. Usage: $(TARGET) <your_video.avi>"; \
 	fi
 
 # Check dependencies
@@ -137,7 +141,7 @@ help:
 	@echo ""
 	@echo "Usage example:"
 	@echo "  make"
-	@echo "  ./$(TARGET) video.avi"
+	@echo "  $(TARGET) video.avi"
 
 # Print build information
 info:

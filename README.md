@@ -76,7 +76,7 @@ make check-deps
 
 ### Basic Usage
 ```bash
-./avi_player your_video.avi
+bin/avi_player your_video.avi
 ```
 
 ### Converting Compressed Videos
@@ -107,8 +107,11 @@ avi_player/
 ├── Makefile         # Build configuration
 ├── Doxyfile         # Doxygen configuration
 ├── README.md        # This file
-└── build/           # Build artifacts (created during compilation)
-    └── *.o          # Object files
+├── .gitignore       # Git ignore file
+├── build/           # Build artifacts (created during compilation)
+│   └── *.o          # Object files
+└── bin/             # Binary output directory
+    └── avi_player   # Compiled executable
 ```
 
 ## Documentation
@@ -147,7 +150,7 @@ The player uses streaming architecture, loading only one frame at a time to mini
 ffmpeg -i sample.mp4 -c:v rawvideo -pix_fmt bgr24 -f avi sample_uncompressed.avi
 
 # Play it
-./avi_player sample_uncompressed.avi
+bin/avi_player sample_uncompressed.avi
 ```
 
 ### Example 2: Creating a test video
@@ -156,7 +159,7 @@ ffmpeg -i sample.mp4 -c:v rawvideo -pix_fmt bgr24 -f avi sample_uncompressed.avi
 ffmpeg -f lavfi -i testsrc=duration=10:size=640x480:rate=30 -c:v rawvideo -pix_fmt bgr24 -f avi test.avi
 
 # Play the test video
-./avi_player test.avi
+bin/avi_player test.avi
 ```
 
 ## Troubleshooting
@@ -183,7 +186,7 @@ ffmpeg -f lavfi -i testsrc=duration=10:size=640x480:rate=30 -c:v rawvideo -pix_f
 Build with debug symbols for troubleshooting:
 ```bash
 make debug
-gdb ./avi_player
+gdb bin/avi_player
 ```
 
 ## Limitations
@@ -210,3 +213,6 @@ This project is provided as-is for educational purposes. Feel free to use and mo
 ## Version History
 
 - **v1.0** - Initial release with basic uncompressed AVI playback support
+
+## Author
+Ahmed Dajani, Email: adajani@iastate.edu
