@@ -1,0 +1,274 @@
+# AVI Player - Git Ignore File
+# Excludes build artifacts, documentation, and temporary files
+
+#---------------------------------------------------------------------------
+# Build Artifacts
+#---------------------------------------------------------------------------
+# Build directory
+build/
+bin/
+obj/
+
+# Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Executables
+avi_player
+avi_player.exe
+*.exe
+*.out
+*.app
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+#---------------------------------------------------------------------------
+# Documentation
+#---------------------------------------------------------------------------
+# Doxygen generated documentation
+docs/
+doc/
+html/
+latex/
+
+# Log files
+*.log
+doxygen_warnings.log
+
+#---------------------------------------------------------------------------
+# IDE and Editor Files
+#---------------------------------------------------------------------------
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# CLion
+.idea/
+cmake-build-*/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.user
+
+# Code::Blocks
+*.cbp
+*.depend
+*.layout
+
+# Dev-C++
+*.dev
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+
+# Eclipse CDT
+.cproject
+.project
+.settings/
+
+# NetBeans
+nbproject/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# Emacs
+\#*\#
+.\#*
+*~
+.#*
+
+#---------------------------------------------------------------------------
+# Operating System Files
+#---------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.fuse_hidden*
+.nfs*
+
+#---------------------------------------------------------------------------
+# Temporary and Backup Files
+#---------------------------------------------------------------------------
+# Backup files
+*.bak
+*.backup
+*.tmp
+*.temp
+*~
+
+# Core dumps
+core
+*.core
+
+# Crash logs
+crash.log
+*.crashlog
+
+#---------------------------------------------------------------------------
+# Compression and Archives
+#---------------------------------------------------------------------------
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.bz2
+
+#---------------------------------------------------------------------------
+# Test and Sample Files
+#---------------------------------------------------------------------------
+# Test videos (optional - comment out if you want to track test files)
+# *.avi
+# test*.avi
+# sample*.avi
+
+# Performance profiling
+*.prof
+gmon.out
+callgrind.out.*
+perf.data*
+
+#---------------------------------------------------------------------------
+# Package Managers
+#---------------------------------------------------------------------------
+# Conan
+conandata.yml
+conanfile.txt
+conanbuildinfo.*
+conan.lock
+
+# vcpkg
+vcpkg_installed/
+
+#---------------------------------------------------------------------------
+# Build Tools
+#---------------------------------------------------------------------------
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# Autotools
+.deps/
+.dirstamp
+*.in
+config.log
+config.status
+configure
+Makefile.in
+aclocal.m4
+autom4te.cache/
+compile
+config.guess
+config.sub
+depcomp
+install-sh
+ltmain.sh
+missing
+
+# Make
+.make_*
+
+#---------------------------------------------------------------------------
+# Static Analysis
+#---------------------------------------------------------------------------
+# Cppcheck
+*.cppcheck
+
+# Clang static analyzer
+*.plist
+*.sarif
+
+# PVS-Studio
+*.PVS-Studio.cfg
+*.pvs
+
+#---------------------------------------------------------------------------
+# Memory Debugging
+#---------------------------------------------------------------------------
+# Valgrind
+vgcore.*
+*.memcheck
+*.helgrind
+*.drd
+
+# AddressSanitizer
+*.asan
+
+#---------------------------------------------------------------------------
+# Custom Project Files
+#---------------------------------------------------------------------------
+# Add any project-specific files to ignore here
+# config.local
+# settings.conf
